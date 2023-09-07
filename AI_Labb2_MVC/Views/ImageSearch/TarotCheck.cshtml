@@ -1,0 +1,44 @@
+﻿@model AI_Labb2_MVC.Models.TarotPredictionViewModel;
+
+@{
+    ViewData["Title"] = "TarotCheck";
+}
+
+<div class="container mt-5 p-2 text-center">
+    <h2 class="pt-2">Image Search</h2>
+    <p>Here you can add a picture of your tarot spread and get a reading</p>
+    <br />
+    <div>
+        <div class="row">
+            <div class="col col-12 col-md-6">
+                <img class="img-theme1" src=@Model.UserInputURL />
+            </div>
+            <div class="col .col-md-4">
+                
+                <div class="container-fluid mt-lg-5 mb-lg5">
+                    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                    {
+                        <div class="alert alert-danger">
+                            @Model.ErrorMessage
+                        </div>
+                    }
+                    else
+                    {
+                        if (!string.IsNullOrEmpty(Model.FirstPrediction))
+                        {
+                            <div class="alert alert-success">
+                                @Model.FirstPrediction
+                            </div>
+                        }
+                        if (!string.IsNullOrEmpty(Model.SecondPrediction))
+                        {
+                            <div class="alert alert-success">
+                                @Model.SecondPrediction
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

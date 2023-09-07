@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Image Search";
+}
+
+<div class="container mt-5 p-2 text-center">
+    <h2 class="pt-2">Image Search</h2>
+    <p>Here you can add a image url to a card and see if it's a tarot card or an oracle card and maybe even what type of deck it is</p>
+    <br />
+    <div>
+        <div class="row">
+            <div class="col col-12 col-md-6">
+                <img class="img-theme1" src="https://images.unsplash.com/photo-1683217956228-d3d24916df55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" />
+            </div>
+            <div class="col .col-md-4">
+                <img class="img-theme mb-lg-5" src="https://images.unsplash.com/photo-1565492206137-0797f1ca6dc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
+                <div class="container-fluid mt-lg-5">
+                    <form asp-controller="ImageSearch" asp-action="TarotCheck" method="post">
+                        <input type="url" name="userInput" placeholder="input URL..."/>
+                        <button type="submit" class="btn btn-success">Check card</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
